@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenActivityQueryTopLevel struct {
@@ -56,10 +55,10 @@ type JdUnionOpenActivityQueryImage struct {
 func (app *App) JdUnionOpenActivityQuery(params map[string]interface{}) (result *JdUnionOpenActivityQueryResult, err error) {
 
 	body, err := app.Request("jd.union.open.activity.query", map[string]interface{}{"activityReq": params})
-	log.Println(string(body))
+	// log.Println(string(body))
 	resp := &JdUnionOpenActivityQueryTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 

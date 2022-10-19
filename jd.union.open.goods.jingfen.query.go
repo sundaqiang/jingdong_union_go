@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenGoodsJingfenQueryTopLevel struct {
@@ -20,7 +19,7 @@ func (app *App) JdUnionOpenGoodsJingfenQuery(params map[string]interface{}) (res
 	body, err := app.Request("jd.union.open.goods.jingfen.query", map[string]interface{}{"goodsReq": params})
 	resp := &JdUnionOpenGoodsJingfenQueryTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 	if err = json.Unmarshal(body, resp); err != nil {

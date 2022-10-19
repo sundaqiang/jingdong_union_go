@@ -2,7 +2,6 @@ package jingdong_union_go
 
 import (
 	"fmt"
-	"log"
 	"testing"
 )
 
@@ -12,24 +11,24 @@ var app = &App{
 	Secret: "xxxxx",
 }
 
-//获取商品类目
+// 获取商品类目
 func TestOpenCategoryGoodsGet(t *testing.T) {
 	res, err := app.JdUnionOpenCategoryGoodsGet(map[string]interface{}{
 		"parentId": 0,
 		"grade":    0,
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 }
 
-//获取活动列表
+// 获取活动列表
 func TestOpenActivityQuery(t *testing.T) {
 	res, err := app.JdUnionOpenActivityQuery(map[string]interface{}{
 		"pageIndex":  1,
 		"pageSize":   50,
-		"poolId":     6, //活动物料ID，1：营销日历热门会场；2：营销日历热门榜单；6：PC站长端官方活动
+		"poolId":     6, // 活动物料ID，1：营销日历热门会场；2：营销日历热门榜单；6：PC站长端官方活动
 		"activeDate": "20210421",
 	})
-	log.Println(len(res.Data), res.TotalCount, err)
+	// log.Println(len(res.Data), res.TotalCount, err)
 }
 
 func TestOpenGoodsJingfenQuery(t *testing.T) {
@@ -40,40 +39,40 @@ func TestOpenGoodsJingfenQuery(t *testing.T) {
 		"pageIndex": 1,
 		"pageSize":  10,
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 }
 
 func TestOpenGoodsQuery(t *testing.T) {
 
-	//单品查询
+	// 单品查询
 	res, err := app.JdUnionOpenGoodsQuery(map[string]interface{}{
 		"skuIds":   []int{30881878056},
 		"isCoupon": "1",
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 
-	//列表查询
+	// 列表查询
 	res, err = app.JdUnionOpenGoodsQuery(map[string]interface{}{
 		"sort":                 "asc",   // asc desc
-		"sortName":             "price", //price：单价, commissionShare：佣金比例, commission：佣金， inOrderCount30Days：30天引单量， inOrderComm30Days：30天支出佣金
+		"sortName":             "price", // price：单价, commissionShare：佣金比例, commission：佣金， inOrderCount30Days：30天引单量， inOrderComm30Days：30天支出佣金
 		"isCoupon":             1,
-		"commissionShareStart": 20, //佣金比例开始区间
+		"commissionShareStart": 20, // 佣金比例开始区间
 		"pageIndex":            1,
 		"pageSize":             10,
 		"cid1":                 1315,
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 }
 
-//获取单品信息
+// 获取单品信息
 func TestOpenGoodsPromotionGoodsInfoQuery(t *testing.T) {
 	res, err := app.JdUnionOpenGoodsPromotiongoodsinfoQuery(map[string]interface{}{
 		"skuIds": "30881878056",
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 }
 
-//获取通用推广链接
+// 获取通用推广链接
 func TestOpenPromotionCommonGet(t *testing.T) {
 	res, err := app.JdUnionOpenPromotionCommonGet(map[string]interface{}{
 		"subUnionId": "test_subunionid",
@@ -83,25 +82,25 @@ func TestOpenPromotionCommonGet(t *testing.T) {
 		"positionId": 1000,
 		"couponUrl":  "http://coupon.jd.com/ilink/couponSendFront/send_index.action?key=02d2b6ff587c42fda6d4cac7ff1c2d6a&roleId=20498843&to=mall.jd.com/index-821028.html",
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 }
 
-//获取商品订单
+// 获取商品订单
 func TestOpenOrderQuery(t *testing.T) {
 
-	//单品查询
+	// 单品查询
 	res, err := app.JdUnionOpenOrderQuery(map[string]interface{}{
-		"type":     "1", //1 下单时间  2 完成时间 3 更新时间
+		"type":     "1", // 1 下单时间  2 完成时间 3 更新时间
 		"time":     "201906141811",
 		"pageNo":   1,
 		"pagesize": 500,
 	})
 
-	log.Println(res, err)
+	// log.Println(res, err)
 }
 
 // 通过subUnionid获取推广链接
-//https://wqitem.jd.com/item/view?sku=
+// https://wqitem.jd.com/item/view?sku=
 func TestOpenPromotionBySubUnionIdGet(t *testing.T) {
 	skuId := 43415523405
 	res, err := app.JdUnionOpenPromotionBysubunionidGet(map[string]interface{}{
@@ -111,5 +110,5 @@ func TestOpenPromotionBySubUnionIdGet(t *testing.T) {
 		"materialId": fmt.Sprintf("https://wqitem.jd.com/item/view?sku=%d", skuId),
 		"couponUrl":  "http://coupon.jd.com/ilink/couponSendFront/send_index.action?key=02d2b6ff587c42fda6d4cac7ff1c2d6a&roleId=20498843&to=mall.jd.com/index-821028.html",
 	})
-	log.Println(res, err)
+	// log.Println(res, err)
 }

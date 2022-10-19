@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenOrderQueryResponseTopLevel struct {
@@ -75,7 +74,7 @@ func (app *App) JdUnionOpenOrderQuery(params map[string]interface{}) (result *Jd
 	body, err := app.Request("jd.union.open.order.query", map[string]interface{}{"orderReq": params})
 	resp := &JdUnionOpenOrderQueryResponseTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 

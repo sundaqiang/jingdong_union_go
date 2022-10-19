@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenGoodsBigfieldQueryTopLevel struct {
@@ -25,10 +24,10 @@ type JdUnionOpenGoodsBigfieldQueryResult struct {
 func (app *App) JdUnionOpenGoodsBigfieldQuery(params map[string]interface{}) (result *JdUnionOpenGoodsBigfieldQueryResult, err error) {
 
 	body, err := app.Request("jd.union.open.goods.bigfield.query", map[string]interface{}{"goodsReq": params})
-	log.Println(string(body))
+	// log.Println(string(body))
 	resp := &JdUnionOpenGoodsBigfieldQueryTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 

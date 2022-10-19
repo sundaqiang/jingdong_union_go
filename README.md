@@ -7,6 +7,7 @@
 ### API列表
 
 #### 通用API
+
 - [x] [订单查询接口 jd.union.open.order.query](https://union.jd.com/openplatform/api/650)
 
 - [x] [京粉精选商品查询接口 jd.union.open.goods.jingfen.query](https://union.jd.com/openplatform/api/739)
@@ -32,6 +33,7 @@
 - [x] [礼金效果数据 jd.union.open.statistics.giftcoupon.query](https://union.jd.com/openplatform/api/12248)
 
 #### 高级API
+
 - [x] [关键词商品查询接口【申请】jd.union.open.goods.query](https://union.jd.com/openplatform/api/628)
 - [ ] [秒杀商品查询接口【申请】 jd.union.open.goods.seckill.query]()
 
@@ -49,7 +51,7 @@
 
 - [ ] [获取PID jd.union.open.user.pid.get]()
 
-###  运行测试用例
+### 运行测试用例
 
 需要在jd.union_test.go中填入自己的appKey,appSecret
 

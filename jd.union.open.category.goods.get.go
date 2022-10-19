@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenCategoryGoodsGetTopLevel struct {
@@ -34,7 +33,7 @@ func (app *App) JdUnionOpenCategoryGoodsGet(params map[string]interface{}) (resu
 	body, err := app.Request("jd.union.open.category.goods.get", map[string]interface{}{"req": params})
 	resp := &JdUnionOpenCategoryGoodsGetTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 

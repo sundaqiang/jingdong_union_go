@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 
 	"github.com/shopspring/decimal"
 )
@@ -89,7 +88,7 @@ func (app *App) JdUnionOpenOrderRowQuery(params map[string]interface{}) (result 
 
 	resp := &JdUnionOpenOrderRowQueryResponseTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 

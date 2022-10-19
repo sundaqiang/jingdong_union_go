@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenGoodsMaterialQueryTopLevel struct {
@@ -21,7 +20,7 @@ func (app *App) JdUnionOpenGoodsMaterialQuery(params map[string]interface{}) (re
 
 	resp := &JdUnionOpenGoodsMaterialQueryTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 	if err = json.Unmarshal(body, resp); err != nil {

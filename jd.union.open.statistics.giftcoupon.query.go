@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 
 	"github.com/shopspring/decimal"
 )
@@ -54,10 +53,10 @@ type CouponEffectData struct {
 func (app *App) JdUnionOpenStatisticsGiftcouponQuery(params map[string]interface{}) (result *JdUnionOpenStatisticsGiftcouponQueryResult, err error) {
 
 	body, err := app.Request("jd.union.open.statistics.giftcoupon.query", map[string]interface{}{"effectDataReq": params})
-	log.Println(string(body))
+	// log.Println(string(body))
 	resp := &JdUnionOpenStatisticsGiftcouponQueryTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 

@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenCouponGiftGetTopLevel struct {
@@ -29,10 +28,10 @@ type CouponGift struct {
 func (app *App) JdUnionOpenCouponGiftGet(params map[string]interface{}) (result *JdUnionOpenCouponGiftGetResult, err error) {
 
 	body, err := app.Request("jd.union.open.coupon.gift.get", map[string]interface{}{"couponReq": params})
-	log.Println(string(body))
+	// log.Println(string(body))
 	resp := &JdUnionOpenCouponGiftGetTopLevel{}
 	if err != nil {
-		log.Println(string(body))
+		// log.Println(string(body))
 		return
 	}
 
